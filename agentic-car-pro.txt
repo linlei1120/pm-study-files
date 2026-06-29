@@ -1,0 +1,37 @@
+Venus Agentic 项目简介
+Venus Agentic 是 Venus Monorepo 中的智能体 Web 应用，面向汽车行业智能助理 / 智能体场景，采用微前端架构，由主应用基座与业务子应用组成，支持独立开发、独立部署与统一集成。
+
+项目定位
+为汽车领域提供智能体全生命周期管理平台，覆盖知识库维护、岗位助理配置、智能体训练与质检等能力，帮助业务团队搭建、运营和优化 AI 智能助理。
+
+架构组成
+子项目	包名	角色
+venus-agentic-base
+@venus/venus-agentic-base
+微前端主应用（基座），默认端口 8080
+venus-agentic-assisant
+@venus/venus-agentic-assisant
+业务子应用「汽车智能体-智能助理」，默认端口 8081
+主应用基于 qiankun 统一管理子应用，子应用配置可从配置中心动态拉取，无需硬编码即可扩展更多微应用。
+
+核心能力
+主应用基座（venus-agentic-base）
+
+登录认证：用户名密码登录、Token 管理、路由守卫与权限控制
+统一布局：顶部导航、可折叠侧边栏、面包屑、微应用挂载容器
+配置中心：远程拉取微应用路由与全局配置
+跨应用通信：向子应用注入消息管理、请求实例等公共能力
+智能助理子应用（venus-agentic-assisant）
+
+知识管理：知识库内容的创建与维护
+岗位助理配置：智能助理的增删改查与启停管理
+智能体管理：训练、练习、质检、复盘等模块
+文档预览：支持 PDF、Word、Excel、PPT 等格式
+组织与权限：部门树、用户管理等配套能力
+技术栈
+框架：Vue 3 + TypeScript + Vite
+微前端：qiankun + vite-plugin-qiankun
+状态管理：Pinia
+路由：Vue Router 4
+UI：Element Plus + @venus/common-ui-vue 公共组件库
+工程化：pnpm workspace、Turbo 构建、Venus CLI 脚手架

@@ -35,3 +35,5 @@ venus-agentic-assisant
 路由：Vue Router 4
 UI：Element Plus + @venus/common-ui-vue 公共组件库
 工程化：pnpm workspace、Turbo 构建、Venus CLI 脚手架
+
+Venus 是一个基于 pnpm workspace + Turbo 的企业级前端 Monorepo 工程框架，以 Vue 3、Vite、TypeScript 为核心技术栈，并统一提供 ESLint / Prettier / Stylelint、Tailwind、Vite 构建配置等工程化能力。仓库按职责分层：apps/ 承载各端业务应用（Web 管理后台、基于 qiankun 的微前端基座、二手车质检/活码、Agentic 智能应用，以及 uni-app / uni-app X 移动端、原生小程序等）；packages/ 沉淀可复用的 CLI 脚手架、跨端 UI 组件库（vui / common-ui）、状态管理、工具函数、图表与类型定义等公共包；internal/ 与 scripts/ 则负责共享配置与构建脚本。框架内置国际化、动态权限路由、主题定制等中后台常用能力，配套 Changesets 版本管理、Lefthook 提交钩子、Vitest / Playwright 测试与 venus create 项目生成命令，既支持从零搭建新项目，也支持将既有项目纳入 Monorepo 复用统一规范，实现多技术栈、多业务线的协同开发与统一治理。
